@@ -1,15 +1,14 @@
 import java.util.Scanner;
 public interface Actions{
-    void buy();
-    
-    
+    void buy(String questions, String a, String b, String c);
 }
 
 class Game implements Actions{
     protected int point = 0;
-    public String a;
+    /*public String a;
     public String b;
     public String c;
+    public String questions;*/
 
     /* Constructor */
     public Game(){
@@ -20,10 +19,10 @@ class Game implements Actions{
         System.out.println("");
     }
 
-    public void buy(){
+    public void buy(String questions, String a, String b, String c){
+        System.out.println(questions);
         System.out.println("Choices are: " + a + b + c);
         Scanner myObj = new Scanner(System.in);  
-        System.out.println("What would you like to buy? ");
         String reply = myObj.nextLine();  
         System.out.println("You chose to buy " + reply);
         if (reply.equalsIgnoreCase("a")){
@@ -32,10 +31,13 @@ class Game implements Actions{
         if (reply.equalsIgnoreCase("b")){
             point -= 6;
         }
+        myObj.close();
     }
 
+
     public static void main(String[] args) {
+        //Game loop
         Game GoodPlace = new Game();;
-        GoodPlace.buy();
+        GoodPlace.buy("buy food?", "bread", "ramen", "rice");
     }
 }
