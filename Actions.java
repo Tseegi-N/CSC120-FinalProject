@@ -1,8 +1,6 @@
 import java.util.Scanner;
 public interface Actions{
-    void buy();
-    
-    
+    void buy();   
 }
 
 class Game implements Actions{
