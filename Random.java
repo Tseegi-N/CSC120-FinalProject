@@ -33,14 +33,14 @@ public class Random extends Game{
     }
 
 
-    @Override
+    /*@Override
     public void buy(String questions, String a, String b, String c){
         super.buy("Do you brush teeth in the morning?", a, b, c);
     }
 
     public void buy(){
         super.buy("Do you brush teeth in the morning?", a, b, c);
-    }
+    }*/
 
     /*public static void main(String[] args) {
         boolean stillPlaying = true;
@@ -56,6 +56,6 @@ public class Random extends Game{
     }*/
     public static void main(String[] args) {
         Random try_one = new Random();
-        try_one.buy();
+        //try_one.buy();
     }
 }

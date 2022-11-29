@@ -1,9 +1,13 @@
 import java.util.Scanner;
-public interface Actions{
+import java.util.ArrayList;
+import java.util.Arrays;
+/*public interface Actions{
     void buy(String questions, String a, String b, String c);
 }
+*/
+import java.util.List;
 
-class Game implements Actions{
+class Game {
     protected int point = 0;
     /*public String a;
     public String b;
@@ -18,17 +22,46 @@ class Game implements Actions{
         System.out.println("Your every action in this lifetime decides whether you go into \n the good place or the bad place. Play the dice, go to the tiles, and answer questions to gain point. \n There is a total of 40 tiles until you reach Judge's chamber.");
         System.out.println("Good forking luck!");
         System.out.println("");
+    }
 
+    public void ask(){
+        System.out.println(firstTile.getQuest(1));
+        String[] answerOne = firstTile.getAns(1);
+        List <String> answerOneList = new ArrayList<String>();
+        answerOneList = Arrays.asList(answerOne);
+        System.out.println("Choices are: " + answerOneList.toString());
+    }
+    public void play(String reply){
+        String[] answerOne = firstTile.getAns(1);
+        System.out.println("Your answer: " + reply);
+        if (answerOne[0] == reply || answerOne[1] == reply || answerOne[2] == reply){
+            if(answerOne[firstTile.getCorrectAns(1)] == reply){
+                point += 6;
+            }
+        }
+        if (answerOne[firstTile.getCorrectAns(1)] != reply){
+            point -= 6;
+        }
+    }
+
+    public static void main(String[] args) {
+        //Game loop
+        Game GoodPlace = new Game();
         boolean stillPlaying = true;
-    
+        
         // The do...while structure means we execute the body of the loop once before checking the stopping condition
         do {
-            System.out.println("You are still playing. Follow the instructions if you want to win/lose...");
-            
+            GoodPlace.ask();
+            Scanner myObj = new Scanner(System.in);  
+            String reply = myObj.nextLine(); 
+            GoodPlace.play(reply); 
+            myObj.close();
+
             if (0 == 0) {
                 stillPlaying = false;
             }
         } while (stillPlaying);
+
     }
 
     
@@ -51,9 +84,5 @@ class Game implements Actions{
 
 
 
-    public static void main(String[] args) {
-        //Game loop
-        Game GoodPlace = new Game();;
-        GoodPlace.buy("buy food?", "bread", "ramen", "rice");
-    }
+    
 }
