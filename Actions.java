@@ -14,7 +14,22 @@ class Game {
     public String c;
     public String questions;*/
 
-    Location firstTile = new Location(1, "Do you brush your teeth in the morning?", 1, "yes", "no", "rinse with moutwash");
+    Location firstTile = new Location(1, "Do you brush your teeth in the morning?", 0, "yes", "no", "rinse with moutwash");
+    Location secondTile = new Location(2, "How do you get to work?", 0, "bike", "bus", "drive");
+    Location thirdTile = new Location(3, "How do you interact with your coworkers?", 0, "Say hi", "ignore", "nod knowingly");
+    Location forthTile = new Location(4, "Buy food from grocery store. Which brand do you choose?", 0, "Organic Farmhouse", "Fresh Greens", "Happy Animals");
+    Location fifthTile = new Location(5, "Buy drink from grocery store. Which brand do you choose?", 2, "Bulb", "Flash", "Nurture");
+    Location sixthTile = new Location(6, "Buy snack from grocery store. Which brand do you choose?", 1, "Kringles", "Zheetos", "Jays");
+    Location seventhTile = new Location(7, "Buy appliances. Which brand do you choose?", 0, "Bouncy", "Cleanext", "Sweep");
+    Location eighthTile = new Location(8, "Buy a cookie from...", 0, "Local bakery", "Costco", "CVS");
+    Location ninthTile = new Location(9, "Buy a cookie. Which flavor do you choose?", 2, "Chocolate", "Almond", "Oatmeal");
+    Location tenthTile = new Location(10, "Buy a cup of coffee. What flavor do you choose?", 0, "Decaf", "Americano", "Latte");
+    Location eleventhTile = new Location(11, "Buy a cup of coffee. Where do you buy it from?", 0, "Local coffee shop", "Starbucks", "Dunkin");
+    Location twelfthTile = new Location(12, "Surprise your partner with flowers! Choose where you get your flowers from.", 0, "Handpick", "grocery store", "local flower shop");
+    Location thirteenthTile = new Location(13, "Check up on your introverted friend! What form of communication do you use?", 1, "Call", "Text", "Surprise visit!");
+    Location fourteenthTile = new Location(14, "Check up on your extroverted friend! What form of communication do you use?", 2, "Call", "Text", "Surprise visit!");
+    Location fifteenthTile = new Location(15, "You need to buy some toilet paper. Where do you want to buy it from?", 2, "Amazon", "Target", "Costco"); 
+
     /* Constructor */
     public Game(){
         System.out.println("Welcome to the Good Place: the game!");
