@@ -61,6 +61,7 @@ class Game {
         else{
             return -1;
         }
+        
     }
     public void play(String reply){
         String[] answerOne = firstTile.getAns(1);
