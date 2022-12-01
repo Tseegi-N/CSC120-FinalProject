@@ -45,7 +45,7 @@ class Game {
         List <String> answerOneList = new ArrayList<String>();
         answerOneList = Arrays.asList(answerOne);
         String[] ansStr = answerOneList.toString().replace("[", "").replace("]", "").split(",");
-        System.out.println("Choices are: \n" + " a: " + ansStr[0] + "\n b:" + ansStr[1] + "\n c: " + ansStr[2]);
+        System.out.println("Choices are: \n" + " a: " + ansStr[0] + "\n b:" + ansStr[1] + "\n c:" + ansStr[2]);
     }
 
     private Integer multipleChoice(String CorAns){
