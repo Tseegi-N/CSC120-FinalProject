@@ -29,6 +29,13 @@ class Game {
     Location thirteenthTile = new Location(13, "Check up on your introverted friend! What form of communication do you use?", 1, "Call", "Text", "Surprise visit!");
     Location fourteenthTile = new Location(14, "Check up on your extroverted friend! What form of communication do you use?", 2, "Call", "Text", "Surprise visit!");
     Location fifteenthTile = new Location(15, "You need to buy some toilet paper. Where do you want to buy it from?", 2, "Amazon", "Target", "Costco"); 
+    Location sixteenthTile = new Location(16, "Buy non dairy milk. Which type do you choose?", 2, "almond milk", "soy milk", "coconut milk");
+    Location seventeenthTile = new Location(17, "How do you ask someone out?", 1, "through phone", "surprise event", "not directly ask them out");
+    Location eighteenthTile = new Location(18, "If your friend ask you to be their bestmate/bridesmaid for their wedding: ", 1, "no", "yes", "says yes but regrets immediately afterwards");
+    Location ninteenthTile = new Location(19, "A volunteer handing out environmental awareness flyers", 0, "sign up to help", "ignore", "call them a \"whale hump\"");
+    Location twentiethTile = new Location(20, "Buy a drink!", 2, "Margarita", "Molotov cocktail", "wine");
+    
+
 
     /* Constructor */
     public Game(){
