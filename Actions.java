@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 class Game {
-    protected int point = 0;
+    protected static int point = 0;
     /*public String a;
     public String b;
     public String c;
@@ -39,7 +39,7 @@ class Game {
         System.out.println("");
     }
 
-    public void ask(){
+    public void ask(){ //should we use void here??
         System.out.println(firstTile.getQuest(1));
         String[] answerOne = firstTile.getAns(1);
         List <String> answerOneList = new ArrayList<String>();
