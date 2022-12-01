@@ -49,35 +49,34 @@ class Game {
     }
 
     private Integer multipleChoice(String CorAns){
-        if(CorAns == "a"){
+        if(CorAns.contains("a")){
             return 0;
         }
-        if(CorAns == "b"){
+        else if(CorAns.contains("b")){
             return 1;
         }
-        if(CorAns == "c"){
+        else if(CorAns.contains("c")){
             return 2;
         }
         else{
             return -1;
         }
-        
     }
+
     public void play(String reply){
         String[] answerOne = firstTile.getAns(1);
         System.out.println("Your answer: " + reply);
-        if (reply.equalsIgnoreCase("a") || reply.equalsIgnoreCase("b") || reply.equalsIgnoreCase("c")){
+       if (reply.equalsIgnoreCase("a") || reply.equalsIgnoreCase("b") || reply.equalsIgnoreCase("c")){
             if(firstTile.getCorrectAns(1) == multipleChoice(reply)){
-                System.out.println(multipleChoice(reply));
                 point += 6;
             }
             if (firstTile.getCorrectAns(1) != multipleChoice(reply)){
                 point -= 6;
-            }
-        } else {
+            } 
+        }else {
             System.out.println("invalid ans");
-        }
     }
+        }  
 
     public static void main(String[] args) {
         //Game loop
