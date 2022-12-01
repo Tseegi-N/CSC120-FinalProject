@@ -44,18 +44,37 @@ class Game {
         String[] answerOne = firstTile.getAns(1);
         List <String> answerOneList = new ArrayList<String>();
         answerOneList = Arrays.asList(answerOne);
-        System.out.println("Choices are: " + answerOneList.toString());
+        String[] ansStr = answerOneList.toString().split(",");
+        System.out.println("Choices are: \n" + " a: " + ansStr[0] + "\n b:" + ansStr[1] + "\n c: " + ansStr[2]);
+    }
+
+    private Integer multipleChoice(String CorAns){
+        if(CorAns == "a"){
+            return 0;
+        }
+        if(CorAns == "b"){
+            return 1;
+        }
+        if(CorAns == "c"){
+            return 2;
+        }
+        else{
+            return -1;
+        }
     }
     public void play(String reply){
         String[] answerOne = firstTile.getAns(1);
         System.out.println("Your answer: " + reply);
-        if (answerOne[0] == reply || answerOne[1] == reply || answerOne[2] == reply){
-            if(answerOne[firstTile.getCorrectAns(1)] == reply){
+        if (reply.equalsIgnoreCase("a") || reply.equalsIgnoreCase("b") || reply.equalsIgnoreCase("c")){
+            if(firstTile.getCorrectAns(1) == multipleChoice(reply)){
+                System.out.println(multipleChoice(reply));
                 point += 6;
             }
-        }
-        if (answerOne[firstTile.getCorrectAns(1)] != reply){
-            point -= 6;
+            if (firstTile.getCorrectAns(1) != multipleChoice(reply)){
+                point -= 6;
+            }
+        } else {
+            System.out.println("invalid ans");
         }
     }
 
@@ -70,6 +89,7 @@ class Game {
             Scanner myObj = new Scanner(System.in);  
             String reply = myObj.nextLine(); 
             GoodPlace.play(reply); 
+            System.out.println(point);
             myObj.close();
 
             if (0 == 0) {
