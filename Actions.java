@@ -39,12 +39,12 @@ class Game {
         System.out.println("");
     }
 
-    public void ask(){ //should we use void here??
+    public void ask(){ 
         System.out.println(firstTile.getQuest(1));
         String[] answerOne = firstTile.getAns(1);
         List <String> answerOneList = new ArrayList<String>();
         answerOneList = Arrays.asList(answerOne);
-        String[] ansStr = answerOneList.toString().split(",");
+        String[] ansStr = answerOneList.toString().replace("[", "").replace("]", "").split(",");
         System.out.println("Choices are: \n" + " a: " + ansStr[0] + "\n b:" + ansStr[1] + "\n c: " + ansStr[2]);
     }
 
@@ -89,7 +89,7 @@ class Game {
             Scanner myObj = new Scanner(System.in);  
             String reply = myObj.nextLine(); 
             GoodPlace.play(reply); 
-            System.out.println(point);
+            //System.out.println(point);
             myObj.close();
 
             if (0 == 0) {
