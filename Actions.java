@@ -87,6 +87,7 @@ class Game {
         do {
             GoodPlace.ask();
             Scanner myObj = new Scanner(System.in);  
+            System.out.print("Please type your answer (a, b, c): ");
             String reply = myObj.nextLine(); 
             GoodPlace.play(reply); 
             //System.out.println(point);
