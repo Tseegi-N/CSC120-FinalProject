@@ -34,8 +34,26 @@ class Game {
     Location eighteenthTile = new Location(18, "If your friend ask you to be their bestmate/bridesmaid for their wedding: ", 1, "no", "yes", "says yes but regrets immediately afterwards");
     Location ninteenthTile = new Location(19, "A volunteer handing out environmental awareness flyers", 0, "sign up to help", "ignore", "call them a \"whale hump\"");
     Location twentiethTile = new Location(20, "Buy a drink!", 2, "Margarita", "Molotov cocktail", "wine");
-    
-
+    Location twentyFirstTile = new Location(21, "How do you impress people?", 1, "Drop celebrity names", "tell jokes", "show them your moves");
+    Location twentySecondTile = new Location(22, "Which NFL team do you support?", 0, "New York Jets", "Miami Dolphins", "Jacksonville Jaguars");
+    Location twentyThirdTile = new Location(23, "How do you respond to 'I love you'?", 0, "YEET", "I consider you one of my favorite friends...", "who doesn't?!");
+    Location twentyFourthTile = new Location(24, "You want to do something. How do you proceed?", 2, "Immediately do it without thinking", "think it over for a year and give up", "ask your friend for help");
+    Location twentyFifthTile = new Location(25, "What is your favorite mythical animal?", 2, "Bearded dragon", "Penguin", "Unicorn");
+    Location twentySixthTile = new Location(26, "How do you get over a break-up?", 2, "Make a rebound guy(Derek)", "Pretend all is okay", "Drink margaritas");
+    Location twentySeventhTile = new Location(27, "How do you get out of the escape room?", 0, "Analyze all rules and play by the rule", "Get distracted by a butterfly and forget about the game", "Break enough stuff until they kick you out");
+    Location twentyEightTile = new Location(28, "What is one thing that brings you joy?", 0, "Wedding day", "People puking on roller coasters", "Vacation");
+    Location twentyNinthTile = new Location(29, "What is your favorite insult?", 2, "Shi(r)t for brains", "Ya basic", "You're a medium person");
+    Location thirtiethTile = new Location(30, "What do philosophers mean by 'knowing yourself'?", 1, "Masturbation", "Full understanding of who you are", "Inner peace");
+    Location thirtyFirstTile = new Location(31, "What do you do if your uber driver starts talking to you?", 0, "Talk with them", "Pay them to be quiet", "Argue that the ride should be free");
+    Location thirtySecondTile = new Location(32, "What do you do in your ethics class?", 1, "Sleep", "Take notes", "Question teacher on everything");
+    Location thirtyThirdTile = new Location(33, "What do you call your 'space'?", 1, "Bud-hole", "Buddy room", "Game room");
+    Location thirtyFourthTile = new Location(34, "What do you do when you have a problem?", 2, "Avoid at all cost", "Drink your problems away", "Approach gently");
+    Location thirtyFifthTile = new Location(35, "Would you feed the ducks?", 2, "No why would I??", "I could", "I can't attend work today because I have to do that");
+    Location thirtySixthTile = new Location(36, "Would you kick a baby?", 0, "No why would I??", "I could", "I can't attend work today because I have to do that");
+    Location thirtySeventhTile = new Location(37, "Would you buy 28 light bublbs from Home Depot?", 1, "No why would I??", "I could", "I can't attend work today because I have to do that");
+    Location thirtyEightTile = new Location(38, "What do you do if kids start yelling for McDonalds?", 0, "We have food at home", "Yell together", "Drives to McDonald drive away once your get a black coffee");
+    Location thirtyNinthTile = new Location(39, "What is the best human creation?", 0, "Froyo", "Chowder", "Garden gnomes");
+    Location fortiethTile = new Location(40, "What is the best tv show?", 1, "Game of Thrones", "The Good Place", "Friends");
 
     /* Constructor */
     public Game(){
