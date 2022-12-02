@@ -1,14 +1,7 @@
 import java.util.Scanner;
-import java.util.stream.IntStream;
 import java.util.ArrayList;
 import java.util.Arrays;
-/*public interface Actions{
-    void buy(String questions, String a, String b, String c);
-}
-*/
 import java.util.List;
-import java.util.PrimitiveIterator;
-import java.util.Random;
 
 class Game {
     protected static int point = 0;
@@ -108,7 +101,6 @@ class Game {
     }  
 
     private static Integer dice(){
-        //Random random = new Random();
         int random_int = (int)Math.floor(Math.random()*(6-1+1)+1);
         return random_int;
     }
@@ -151,7 +143,6 @@ class Game {
             if(point < 10 & point > -10){
                 System.out.println("You're in Medium Place. Welcome to eternal boring life \n YA BASIC");
             }
-            //System.out.println(point);
             myObj.close();
 
             if (0 == 0) {
