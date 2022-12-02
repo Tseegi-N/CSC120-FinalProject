@@ -99,7 +99,7 @@ class Game {
             if(map[Tile].getCorrectAns() == multipleChoice(reply)){
                 point += 6;
             }
-            if (firstTile.getWrongAns(1) == multipleChoice(reply)){
+            if (map[Tile].getWrongAns() == multipleChoice(reply)){
                 point -= 6;
             } 
         }else {
@@ -121,17 +121,23 @@ class Game {
         // The do...while structure means we execute the body of the loop once before checking the stopping condition
         do {
             CurrentTile = 0;
-            System.out.println("Roll the dice");
+            System.out.println("Rolling the dice...");
             Scanner myObj = new Scanner(System.in); 
+            DiceNumber = dice();
+            CurrentTile += DiceNumber;
             while(CurrentTile < 41){
-                DiceNumber = dice();
-                CurrentTile += DiceNumber;
+                
+                System.out.println("You're currently on tile " + CurrentTile);
                 GoodPlace.ask(CurrentTile); 
                 System.out.print("Please type your answer (a, b, c): ");
                 String reply = myObj.nextLine(); 
                 GoodPlace.play(reply, CurrentTile); 
                 System.out.println("Roll the dice again");
-                
+                DiceNumber = dice();
+                CurrentTile += DiceNumber;
+                System.out.println();
+                System.out.println("--------------------------------------------------");
+                System.out.println();
             }
             System.out.println("You reached the Judge's chamber. It's judgement time!!!");
             if(point > 10){
@@ -142,7 +148,7 @@ class Game {
                 BadPlace Final = new BadPlace();
                 Final.display();
             }
-            else{
+            if(point < 10 & point > -10){
                 System.out.println("You're in Medium Place. Welcome to eternal boring life \n YA BASIC");
             }
             //System.out.println(point);

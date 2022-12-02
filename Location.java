@@ -25,4 +25,8 @@ public class Location {
     public Integer getCorrectAns(){
         return CorrectAnswer;
     }    
+
+    public Integer getWrongAns(){
+        return WrongAnswer;
+    }
 }
