@@ -41,7 +41,7 @@ public class Location {
         }
     }    
 
-    public void askQuestions(){
+    public void askQuestions(Integer TileNum){
         System.out.println(question);
     }
 }
