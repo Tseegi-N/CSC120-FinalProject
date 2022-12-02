@@ -13,6 +13,10 @@ public class Location {
         this.TileNumber = TileNum;
     }
 
+    public Location(Integer TileNum){
+        this.TileNumber = TileNum;
+    }
+
     public String getQuest(Integer TileNum){
         if(TileNum == TileNumber){
             return question;
@@ -42,6 +46,12 @@ public class Location {
     }    
 
     public void askQuestions(Integer TileNum){
-        System.out.println(question);
+        if(TileNum == TileNumber){
+            System.out.println(question);
+        }
+        else{
+            System.out.println("Invalid tile number");
+        }
     }
+
 }

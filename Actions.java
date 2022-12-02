@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 /*public interface Actions{
@@ -6,13 +7,13 @@ import java.util.Arrays;
 }
 */
 import java.util.List;
+import java.util.Random;
 
 class Game {
     protected static int point = 0;
-    /*public String a;
-    public String b;
-    public String c;
-    public String questions;*/
+    static Integer CurrentTile;
+    static Integer DiceNumber;
+    
 
     Location firstTile = new Location(1, "Do you brush your teeth in the morning?", 0, "yes", "no", "rinse with moutwash");
     Location secondTile = new Location(2, "How do you get to work?", 0, "bike", "bus", "drive");
@@ -100,8 +101,14 @@ class Game {
             } 
         }else {
             System.out.println("invalid ans");
+        }
+    }  
+
+    private static Integer dice(){
+        //Random random = new Random();
+        int random_int = (int)Math.floor(Math.random()*(6-1+1)+1);
+        return random_int;
     }
-        }  
 
     public static void main(String[] args) {
         //Game loop
@@ -110,11 +117,16 @@ class Game {
         
         // The do...while structure means we execute the body of the loop once before checking the stopping condition
         do {
+            CurrentTile = 0;
+            DiceNumber = dice();
+            CurrentTile += DiceNumber;
+            Location(CurrentTile);
             GoodPlace.ask();
             Scanner myObj = new Scanner(System.in);  
             System.out.print("Please type your answer (a, b, c): ");
             String reply = myObj.nextLine(); 
             GoodPlace.play(reply); 
+
             //System.out.println(point);
             myObj.close();
 
