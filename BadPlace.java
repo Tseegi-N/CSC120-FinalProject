@@ -14,7 +14,6 @@ System.out.println(ANSI_RED +"  /     /    \\  \\     \\/   /"+ ANSI_RESET);
 
 
 public static void main(String[] args) {
-    System.out.println("YOU'RE IN THE BAD PLACE NOW. BURNNNN IN HELLLLLL");
     BadPlace.display(); 
 }
 }

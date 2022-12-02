@@ -44,9 +44,9 @@ class Game {
     map[32] = new Location("What do you do in your ethics class?", 1, 2, "Sleep", "Take notes", "Question teacher on everything");
     map[33] = new Location("What do you call your 'space'?", 1, 0, "Bud-hole", "Buddy room", "Game room");
     map[34] = new Location("What do you do when you have a problem?", 2, 1, "Avoid at all cost", "Drink your problems away", "Approach gently");
-    map[35] = new Location("Would you feed the ducks?", 2, 0, "No why would I??", "I could", "I can't attend work today because I have to do that");
-    map[36] = new Location("Would you kick a baby?", 0, 2, "No why would I??", "I could", "I can't attend work today because I have to do that");
-    map[37] = new Location("Would you buy 28 light bublbs from Home Depot?", 1, 2, "No why would I??", "I could", "I can't attend work today because I have to do that");
+    map[35] = new Location("Would you feed the ducks?", 2, 0, "No why would I??", "I could", "I'd skip work to do that!");
+    map[36] = new Location("Would you kick a baby?", 0, 2, "No why would I??", "I could", "I'd skip work to do that!");
+    map[37] = new Location("Would you buy 28 light bublbs from Home Depot?", 1, 2, "No why would I??", "I could", "I'd skip work to do that!");
     map[38] = new Location("What do you do if kids start yelling for McDonalds?", 0, 2, "We have food at home", "Yell together", "Drives to McDonald drive away once your get a black coffee");
     map[39] = new Location("What is the best human creation?", 0, 1, "Froyo", "Chowder", "Garden gnomes");
     map[40] = new Location("What is the best tv show?", 1, 0, "Game of Thrones", "The Good Place", "Friends");
@@ -139,6 +139,7 @@ class Game {
             if(point < -10){
                 BadPlace Final = new BadPlace();
                 Final.display();
+                System.out.println("YOU'RE IN THE BAD PLACE NOW. BURNNNN IN HELLLLLL");
             }
             if(point < 10 & point > -10){
                 System.out.println("You're in Medium Place. Welcome to eternal boring life \n YA BASIC");
