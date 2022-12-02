@@ -7,6 +7,7 @@ import java.util.Arrays;
 }
 */
 import java.util.List;
+import java.util.PrimitiveIterator;
 import java.util.Random;
 
 class Game {
@@ -118,15 +119,32 @@ class Game {
         // The do...while structure means we execute the body of the loop once before checking the stopping condition
         do {
             CurrentTile = 0;
-            DiceNumber = dice();
-            CurrentTile += DiceNumber;
-            Location(CurrentTile);
-            GoodPlace.ask();
-            Scanner myObj = new Scanner(System.in);  
-            System.out.print("Please type your answer (a, b, c): ");
-            String reply = myObj.nextLine(); 
-            GoodPlace.play(reply); 
-
+            System.out.println("Roll the dice");
+            Scanner myObj = new Scanner(System.in); 
+            while(CurrentTile < 41){
+                
+                DiceNumber = dice();
+                CurrentTile += DiceNumber;
+                //Location(CurrentTile);
+                GoodPlace.ask(); 
+                System.out.print("Please type your answer (a, b, c): ");
+                String reply = myObj.nextLine(); 
+                GoodPlace.play(reply); 
+                System.out.println("Roll the dice again");
+                
+            }
+            System.out.println("You reached the Judge's chamber. It's judgement time!!!");
+            if(point > 10){
+                GoodPlace Final = new GoodPlace();
+                Final.display();
+            }
+            if(point < -10){
+                BadPlace Final = new BadPlace();
+                Final.display();
+            }
+            else{
+                System.out.println("You're in Medium Place. Welcome to eternal boring life \n YA BASIC");
+            }
             //System.out.println(point);
             myObj.close();
 
