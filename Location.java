@@ -4,12 +4,14 @@ public class Location {
     String question;
     String[] answers;
     Integer CorrectAnswer;
+    Integer WrongAnswer;
     Integer TileNumber;
 
-    public Location(String quest, Integer CorrectAns, String... questAns){
+    public Location(String quest, Integer CorrectAns, Integer WrongAns, String... questAns){
         this.question = quest;
         this.answers = questAns;
         this.CorrectAnswer = CorrectAns;
+        this.WrongAnswer = WrongAns;
     }
 
     public String getQuest(){
