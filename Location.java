@@ -44,14 +44,4 @@ public class Location {
             return -1;
         }
     }    
-
-    public void askQuestions(Integer TileNum){
-        if(TileNum == TileNumber){
-            System.out.println(question);
-        }
-        else{
-            System.out.println("Invalid tile number");
-        }
-    }
-
 }
