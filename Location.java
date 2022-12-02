@@ -7,52 +7,26 @@ public class Location {
     Integer WrongAnswer;
     Integer TileNumber;
 
-    public Location(Integer TileNum, String quest, Integer CorrectAns, Integer WrongAns, String... questAns){
+    public Location(String quest, Integer CorrectAns, Integer WrongAns, String... questAns){
         this.question = quest;
         this.answers = questAns;
         this.CorrectAnswer = CorrectAns;
         this.WrongAnswer = WrongAns;
-        this.TileNumber = TileNum;
     }
 
-    public Location(Integer TileNum){
-        this.TileNumber = TileNum;
+    public String getQuest(){
+        return question;
     }
 
-    public String getQuest(Integer TileNum){
-        //if(TileNum == TileNumber){
-            return question;
-       // }
-       // else{
-            //return "wtf??";
-        //}
+    public String[] getAns(){
+        return answers;
     }
 
-    public String[] getAns(Integer TileNum){
-        if(TileNum == TileNumber){
-            return answers;
-        }
-        else{
-            String[] example = {"m", "fe"};
-            return example;
-        }
-    }
-
-    public Integer getCorrectAns(Integer TileNum){
-        if(TileNum == TileNumber){
-            return CorrectAnswer;
-        }
-        else{
-            return -1;
-        }
-    }   
-    
-    public Integer getWrongAns(Integer TileNum){
-        if(TileNum == TileNumber){
-            return WrongAnswer;
-        }
-        else{
-            return -1;
-        }
+    public Integer getCorrectAns(){
+        return CorrectAnswer;
     }    
+
+    public Integer getWrongAns(){
+        return WrongAnswer;
+    }
 }
