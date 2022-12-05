@@ -4,11 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 
 class Game {
+    /* Declaring parameters */
     protected static int point = 0;
     static Integer CurrentTile;
     static Integer DiceNumber;
     
-
+    /* Assign information to each tile */
     Location[] map = new Location[41];{
     map[1] = new Location("Do you brush your teeth in the morning?", 0, 2, "yes", "no", "rinse with moutwash");
     map[2] = new Location("How do you get to work?", 0, 1, "bike", "bus", "drive");
@@ -61,8 +62,15 @@ class Game {
         System.out.println("");
     }
 
+    /**
+     * Prints out questons and multiple choices
+     * @param tile - number of tile 
+     */
     public void ask(Integer tile){ 
+        //Print question of the tile
         System.out.println(map[tile].getQuest());
+
+        //Assign multiple choices to string list and print
         String[] answerOne = map[tile].getAns();
         List <String> answerOneList = new ArrayList<String>();
         answerOneList = Arrays.asList(answerOne);
@@ -70,6 +78,11 @@ class Game {
         System.out.println("Choices are: \n" + " a: " + ansStr[0] + "\n b:" + ansStr[1] + "\n c:" + ansStr[2]);
     }
 
+    /**
+     * Check for user input and return indexes
+     * @param CorAns - string of user input
+     * @return Integer of indexes for the multiple choice
+     */
     private Integer multipleChoice(String CorAns){
         if(CorAns.contains("a")){
             return 0;
@@ -85,53 +98,84 @@ class Game {
         }
     }
 
+    /**
+     * Assign points if question is answered correct/incorrect
+     * @param reply - string of user input
+     * @param Tile - index of the tile number
+     */
     public void play(String reply, Integer Tile){
-        String[] answerOne = map[Tile].getAns();
         System.out.println("Your answer: " + reply);
-       if (reply.equalsIgnoreCase("a") || reply.equalsIgnoreCase("b") || reply.equalsIgnoreCase("c")){
+
+        //If user input matches possible multiple choices
+        if (reply.equalsIgnoreCase("a") || reply.equalsIgnoreCase("b") || reply.equalsIgnoreCase("c")){
+            //if correct +6, incorrect -6, medium answer no change   
             if(map[Tile].getCorrectAns() == multipleChoice(reply)){
-                point += 6;
+                point += 6;            
             }
             if (map[Tile].getWrongAns() == multipleChoice(reply)){
                 point -= 6;
             } 
-        }else {
+        }
+        else {
             point += 0;
         }
     }  
 
+    /**
+     * Roll the dice and get random number from 1 to 6
+     * @return random integer (1-6)
+     */
     private static Integer dice(){
         int random_int = (int)Math.floor(Math.random()*(6-1+1)+1);
         return random_int;
     }
 
+    /**
+     * To start game
+     */
     public static void main(String[] args) {
         //Game loop
         Game GoodPlace = new Game();
         boolean stillPlaying = true;
         
-        // The do...while structure means we execute the body of the loop once before checking the stopping condition
         do {
+            //On tile 0 at the start of the game
             CurrentTile = 0;
             System.out.println("Rolling the dice...");
+
+            //Input scanner
             Scanner myObj = new Scanner(System.in); 
+
+            //Roll the dice and change tile
             DiceNumber = dice();
             CurrentTile += DiceNumber;
+
+            //Only 40 tiles to reach the Judge's chamber
             while(CurrentTile < 41){
-                
                 System.out.println("You're currently on tile " + CurrentTile);
                 GoodPlace.ask(CurrentTile); 
                 System.out.print("Please type your answer (a, b, c): ");
+
+                //Waiting for input
                 String reply = myObj.nextLine(); 
+
+                //Ask question, play game
                 GoodPlace.play(reply, CurrentTile); 
+
+                //Roll the dice again to move on and reach the Judge's chamber
                 System.out.println("Roll the dice again");
                 DiceNumber = dice();
                 CurrentTile += DiceNumber;
+
+                //Seperator
                 System.out.println();
                 System.out.println("--------------------------------------------------");
                 System.out.println();
             }
+
+            //Game is over; count the total score to see the result
             System.out.println("You reached the Judge's chamber. It's judgement time!!!");
+            
             if(point > 10){
                 GoodPlace Final = new GoodPlace();
                 Final.display();
@@ -144,8 +188,10 @@ class Game {
             if(point < 10 & point > -10){
                 System.out.println("You're in Medium Place. Welcome to eternal boring life \n YA BASIC");
             }
+            //Close scanner
             myObj.close();
 
+            //End the game loop (unnecessary?)
             if (0 == 0) {
                 stillPlaying = false;
             }
