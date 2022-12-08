@@ -103,7 +103,7 @@ class Game {
      * @param reply - string of user input
      * @param Tile - index of the tile number
      */
-    public void play(String reply, Integer Tile){
+    public boolean play(String reply, Integer Tile){
         System.out.println("Your answer: " + reply);
 
         //If user input matches possible multiple choices
@@ -115,11 +115,14 @@ class Game {
             if (map[Tile].getWrongAns() == multipleChoice(reply)){
                 point -= 6;
             } 
+            return true;
         }
         else {
-            point += 0;
+            System.out.println("Invalid answer, please try again.");
+            return false;
         }
     }  
+
 
     /**
      * Roll the dice and get random number from 1 to 6
@@ -129,6 +132,8 @@ class Game {
         int random_int = (int)Math.floor(Math.random()*(6-1+1)+1);
         return random_int;
     }
+
+
 
     /**
      * To start game
@@ -161,6 +166,13 @@ class Game {
 
                 //Ask question, play game
                 GoodPlace.play(reply, CurrentTile); 
+
+                while(GoodPlace.play(reply, CurrentTile) == false){
+                    System.out.println("Wrong input, please try again.");
+                    String replyAgain = myObj.nextLine(); 
+                    GoodPlace.play(replyAgain, CurrentTile);
+                    point -= 3; 
+                }
 
                 //Roll the dice again to move on and reach the Judge's chamber
                 System.out.println("Roll the dice again");
