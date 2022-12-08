@@ -156,7 +156,7 @@ class Game {
             //Only 40 tiles to reach the Judge's chamber
             while(CurrentTile < 41){
                 System.out.println("You're currently on tile " + CurrentTile);
-                GoodPlace.ask(CurrentTile); 
+                GoodPlace.ask(CurrentTile);
                 System.out.print("Please type your answer (a, b, c): ");
 
                 //Waiting for input
@@ -168,7 +168,6 @@ class Game {
                     String replyAgain = myObj.nextLine(); 
 
                     if(GoodPlace.play(replyAgain, CurrentTile) == false){
-                    GoodPlace.ask(CurrentTile);
                     GoodPlace.play(replyAgain, CurrentTile);
                 }
 
