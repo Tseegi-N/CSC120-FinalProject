@@ -33,7 +33,7 @@ __YES__ 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
 __YES__ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      __ __ Classes & class members all have Javadoc header comments.
+      __YES__ Classes & class members all have Javadoc header comments.
 
       __YES__ Clear and consistent indentation of bracketed sections.
 
