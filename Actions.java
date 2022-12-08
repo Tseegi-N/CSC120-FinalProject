@@ -104,10 +104,9 @@ class Game {
      * @param Tile - index of the tile number
      */
     public boolean play(String reply, Integer Tile){
-        System.out.println("Your answer: " + reply);
-
         //If user input matches possible multiple choices
         if (reply.equalsIgnoreCase("a") || reply.equalsIgnoreCase("b") || reply.equalsIgnoreCase("c")){
+            System.out.println("Your answer: " + reply);
             //if correct +6, incorrect -6, medium answer no change   
             if(map[Tile].getCorrectAns() == multipleChoice(reply)){
                 point += 6;            
@@ -118,7 +117,6 @@ class Game {
             return true;
         }
         else {
-            System.out.println("Invalid answer, please try again.");
             return false;
         }
     }  
@@ -165,14 +163,20 @@ class Game {
                 String reply = myObj.nextLine(); 
 
                 //Ask question, play game
-                GoodPlace.play(reply, CurrentTile); 
-
                 while(GoodPlace.play(reply, CurrentTile) == false){
-                    System.out.println("Wrong input, please try again.");
+                    System.out.print("Invalid answer, please try again: ");
                     String replyAgain = myObj.nextLine(); 
+
+                    if(GoodPlace.play(replyAgain, CurrentTile) == false){
+                    GoodPlace.ask(CurrentTile);
                     GoodPlace.play(replyAgain, CurrentTile);
-                    point -= 3; 
                 }
+
+                    if(GoodPlace.play(replyAgain, CurrentTile) == true){
+                        break;
+                    }
+                    //break;
+                } 
 
                 //Roll the dice again to move on and reach the Judge's chamber
                 System.out.println("Roll the dice again");
@@ -187,6 +191,7 @@ class Game {
 
             //Game is over; count the total score to see the result
             System.out.println("You reached the Judge's chamber. It's judgement time!!!");
+            System.out.println("Your point total is: " + point);
             
             if(point > 10){
                 GoodPlace Final = new GoodPlace();
