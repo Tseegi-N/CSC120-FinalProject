@@ -48,7 +48,7 @@ class Game {
     map[35] = new Location("Would you feed the ducks?", 2, 0, "No why would I??", "I could", "I'd skip work to do that!");
     map[36] = new Location("Would you kick a baby?", 0, 2, "No why would I??", "I could", "I'd skip work to do that!");
     map[37] = new Location("Would you buy 28 light bublbs from Home Depot?", 1, 2, "No why would I??", "I could", "I'd skip work to do that!");
-    map[38] = new Location("What do you do if kids start yelling for McDonalds?", 0, 2, "We have food at home", "Yell together", "Drives to McDonald drive away once your get a black coffee");
+    map[38] = new Location("What do you do if kids start yelling for McDonalds?", 0, 2, "We have food at home", "Yell together", "Drives to McDonald to just get a black coffee");
     map[39] = new Location("What is the best human creation?", 0, 1, "Froyo", "Chowder", "Garden gnomes");
     map[40] = new Location("What is the best tv show?", 1, 0, "Game of Thrones", "The Good Place", "Friends");
     }
@@ -139,9 +139,7 @@ class Game {
     public static void main(String[] args) {
         //Game loop
         Game GoodPlace = new Game();
-        boolean stillPlaying = true;
         
-        do {
             //On tile 0 at the start of the game
             CurrentTile = 0;
             System.out.println("Rolling the dice...");
@@ -206,12 +204,5 @@ class Game {
             }
             //Close scanner
             myObj.close();
-
-            //End the game loop (unnecessary?)
-            if (0 == 0) {
-                stillPlaying = false;
-            }
-        } while (stillPlaying);
-
-    }
+        }
 }
