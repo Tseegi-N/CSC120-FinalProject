@@ -24,4 +24,3 @@ Jordan - he suggested that we utilize a list, which helped us remove a roadblock
 Use lists, go to office hours, ask for help from our peers, and be open to suggestions are the main takeaways from our project. 
  - _If you worked with a team:_ please comment on how your **team dynamics** influenced your experience working on this project.
 We did pair programming and contributed equally to the project. Moreover, we both debugged roadblocks that appeared during our programming. We are the Chidi-Eleanor couple in this world!!!
-
